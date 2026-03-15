@@ -4,37 +4,34 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
 ![Version](https://img.shields.io/badge/Version-1.0-green.svg)
 
-A sophisticated PowerShell tool that simulates human typing patterns with realistic mistakes, pauses, and customizable settings. Perfect for demonstrations, testing, or automating text input with a human touch.
 
-## ✨ Features
+A simple tool that types automatically like a human - with mistakes, pauses, and variable speed.
 
-### 🎯 Core Features
-- **Human-like Typing**: Simulates natural typing speeds and patterns
-- **Mistake Simulation**: Automatically creates and corrects typos
-- **Real-time Control**: Pause, resume, stop, and check status with hotkeys
+## 🚀 How to Use
 
-### ⚙️ Customizable Settings
-- **Speed Profiles**: Very Slow, Slow, Medium, Fast, Very Fast
-- **Mistake Levels**: 0 to 10+ mistakes with random option
-- **Hotkey Configuration**: Customize all control keys
-- **Text Input Options**: Notepad, Clipboard, or Default text
+1. **Download** `Human-Like-Typer.ps1`
+2. **Right-click** and select "Run with PowerShell"
+3. **Choose options** from the menu:
+   - Load text (from Notepad, Clipboard, or use default)
+   - Set speed (Very Slow to Very Fast)
+   - Set mistakes (0 to 10+)
+   - Configure hotkeys (F8-F11 default)
+4. **Press 9** to start typing
+5. **Click** on your target window within 5 seconds
 
-### 🎮 Hotkeys (Default)
-| Function | Default Key |
-|----------|------------|
-| Pause | F8 |
-| Resume | F9 |
-| Stop | F10 |
-| Status | F11 |
+## 🎮 Default Hotkeys
+- `F8` - Pause
+- `F9` - Resume
+- `F10` - Stop
+- `F11` - Check status
 
-## 📥 Installation
+## 📋 Requirements
+- Windows computer
+- PowerShell (comes with Windows)
 
-### Prerequisites
-- Windows Operating System
-- PowerShell 5.1 or higher
+## 📥 Download
+Click [Human-Like-Typer.ps1](Human-Like-Typer.ps1) above to download
 
-### Method 1: Direct Download
-```powershell
-# Download and run
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/YOUR_USERNAME/Creators-Eye-Human-Like-Typer/main/Human-Like-Typer.ps1" -OutFile "Human-Like-Typer.ps1"
-.\Human-Like-Typer.ps1
+---
+
+Created by Creators Eye team
