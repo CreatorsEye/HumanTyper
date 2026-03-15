@@ -1,71 +1,121 @@
-# 🎨 Creators Eye Auto Typer – GUI Version
+# 🚀 Creators Eye Auto Typer v1.0 – GUI Release
 
-A standalone Windows application with modern interface, global hotkeys, and full typing automation.
+[![Download](https://img.shields.io/badge/Download-CEautoTyper.exe-brightgreen)](https://archive.org/download/creators-eye-human-typer/CEautoTyper.exe)
+[![Version](https://img.shields.io/badge/Version-1.0-blue)]()
+[![Size](https://img.shields.io/badge/Size-60%20MB-orange)]()
+[![Windows](https://img.shields.io/badge/Platform-Windows%207%2B-success)]()
 
-## 📥 Download
+## 📸 Screenshot
 
-Download `CEautoTyper.exe` from [Archive.org](https://archive.org/details/creators-eye-human-typer)
+![Creators Eye Auto Typer GUI](Capture.PNG)
 
-## 🚀 Quick Start
+---
 
-1. Double-click `CEautoTyper.exe`
-2. Paste or type your text
-3. Click **START** or press `F5`
-4. Click target window within 5 seconds
-5. Watch it type!
+## 📦 Release Information
 
-## 🎮 Global Hotkeys
+| | |
+|---|---|
+| **File** | `CEautoTyper.exe` |
+| **Version** | 1.0.0 |
+| **Release Date** | March 15, 2026 |
+| **Size** | ~60 MB |
+| **Architecture** | 64-bit |
+| **Requirements** | Windows 7/8/10/11 |
+
+---
+
+## 🔗 Download
+
+**[⬇️ DOWNLOAD CEAUTOTYPER.EXE](https://archive.org/download/creators-eye-human-typer/CEautoTyper.exe)**
+
+Mirror: [Archive.org Page](https://archive.org/details/creators-eye-human-typer)
+
+---
+
+## ✨ What's New in v1.0
+
+- ✅ First official release
+- ✅ Human-like typing with variable speeds
+- ✅ Mistake simulation (configurable)
+- ✅ Line break preservation
+- ✅ Global hotkeys (F5, F8, F9, F10, F11)
+- ✅ Customizable hotkeys
+- ✅ Clipboard and Notepad input
+- ✅ Modern borderless GUI
+- ✅ Always on top while typing
+- ✅ Live action log
+
+---
+
+## 🎮 Default Hotkeys
 
 | Key | Action |
 |-----|--------|
-| `F5` | Start |
+| `F5` | Start Typing |
 | `F8` | Pause |
 | `F9` | Resume |
 | `F10` | Stop |
-| `F11` | Status |
+| `F11` | Status Check |
 
-*Click **Set Hotkeys** to customize*
+---
 
 ## ⚙️ Settings
 
 **Speed Levels:**
-- Very Slow (200-300ms)
-- Slow (120-200ms)
-- Medium (60-120ms)
-- Fast (30-70ms)
-- Very Fast (15-40ms)
+- 🐢 Very Slow (200-300ms)
+- 🚶 Slow (120-200ms)
+- ⚡ Medium (60-120ms)
+- 🏃 Fast (30-70ms)
+- 🚀 Very Fast (15-40ms)
 
 **Mistake Levels:**
-- None (0)
-- Few (1-2)
-- Some (3-4)
-- Many (5-7)
-- Lots (8-10)
-- Random
+- ✅ None (0)
+- 🔹 Few (1-2)
+- 🔸 Some (3-4)
+- ⚠️ Many (5-7)
+- ❗ Lots (8-10)
+- 🎲 Random
 
-## 📝 Input Methods
+---
 
-- Type directly
-- Paste from clipboard
-- Import from Notepad
+## 📝 How to Use
 
-## 🖼️ Interface
+1. **Download** the EXE from the link above
+2. **Double-click** to run (no installation)
+3. **Paste or type** your text
+4. **Click START** or press `F5`
+5. **Click target window** within 5 seconds
+6. **Watch it type!**
 
-- Borderless dark theme
-- Drag by title bar
-- Live action log
-- Minimize/Close buttons
+---
 
-## 🔧 Build from Source
+## 🔧 System Requirements
 
-```bash
-cd gui/src
-dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
-```
+- Windows 7, 8, 10, or 11 (64-bit only)
+- No additional software required
+- 100 MB RAM minimum
+- 60 MB disk space
 
-## ❓ Troubleshooting
-Click target during countdown
+---
 
-Change hotkeys if conflicts
+## 📋 Changelog
 
-Add antivirus exclusion if needed
+### v1.0 (2026-03-15)
+- Initial release
+- Full typing automation
+- Hotkey customization
+- Mistake simulation
+- Line break support
+
+---
+
+## 📞 Support
+
+- GitHub: [Create an issue](https://github.com/yourusername/CreatorsEye-AutoTyper/issues)
+- Archive.org: [Leave a comment](https://archive.org/details/creators-eye-human-typer)
+
+---
+
+## 📜 License
+
+MIT © 2026 Creators Eye
