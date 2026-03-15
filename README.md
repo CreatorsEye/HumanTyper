@@ -45,7 +45,7 @@ A human-like typing automation tool that types text **exactly as written** – p
 
 #### 📚 Resources
 * [GUI Quick Start Guide](docs/gui-quick-guide.md) – Detailed instructions
-* [Archive.org Mirror](https://archive.org/details/creators-eye-human-typer) – Project page
+* [Archive.org Mirror](https://archive.org/details/creators-eye-human-typer) – Application page
 * [Torrent Download](https://archive.org/download/creators-eye-human-typer/creators-eye-human-typer_archive.torrent)
 
 ---
