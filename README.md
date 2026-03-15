@@ -1,78 +1,134 @@
-# 🚀 Creators Eye Auto Typer
+# <img src="https://raw.githubusercontent.com/yourusername/CreatorsEye-AutoTyper/main/docs/icon.png" width="32" height="32"> Creators Eye Auto Typer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Windows](https://img.shields.io/badge/Platform-Windows-blue)](https://github.com/yourusername/CreatorsEye-AutoTyper)
-[![CLI](https://img.shields.io/badge/CLI-PowerShell-blue)](cli/)
-[![GUI](https://img.shields.io/badge/GUI-EXE-brightgreen)](https://archive.org/download/creators-eye-human-typer/Creators%20Eye%20Human%20Typer.exe)
-[![Internet Archive](https://img.shields.io/badge/Archive.org-Project-orange)](https://archive.org/details/creators-eye-human-typer)
-[![Torrent](https://img.shields.io/badge/Download-Torrent-blueviolet)](https://archive.org/download/creators-eye-human-typer/creators-eye-human-typer_archive.torrent)
+[![Windows](https://img.shields.io/badge/Platform-Windows%207%2B-blue)](https://github.com/yourusername/CreatorsEye-AutoTyper)
+[![Downloads](https://img.shields.io/badge/Downloads-Archive.org-orange)](https://archive.org/details/creators-eye-human-typer)
 
-A human-like typing automation tool that types text exactly as written – preserving line breaks, spacing, and formatting.
+A human-like typing automation tool that types text **exactly as written** – preserving line breaks, spacing, and formatting with realistic delays and mistakes.
 
 ---
+## 📋 Quick Overview
 
-## 📥 Quick Download
-
-| Version | Description | Download |
+| For | Choose | What you get |
 |:---|:---|:---|
-| 🖥️ **CLI** | PowerShell script (no install) | [`Human-Like-Typer.ps1`](cli/Human-Like-Typer.ps1) or [Copy/Paste Code](cli/Human-Like-Typer.ps1) |
-| 🎨 **GUI** | Compiled executable | [`CEautoTyper.exe`](https://archive.org/download/creators-eye-human-typer/CEautoTyper.exe) (~60 MB) |
+| **👤 End Users** | [**CLI Tool**](cli/) or [**GUI Tool**](gui/) | Ready-to-run tools, no coding needed |
+| **👨‍💻 Developers** | [**Source Code**](gui/src/) | Build, modify, or contribute |
+---
 
-👉 **GUI Version** is also available on [Archive.org](https://archive.org/details/creators-eye-human-typer)
+## 🎯 For End Users
+
+### 🖥️ CLI Edition (PowerShell Script)
+**Perfect for:** Users who want a lightweight, script-based tool with no downloads.
+
+#### 📥 Get Started
+| Step | Action |
+|:---:|:---|
+| **1** | Download [`Human-Like-Typer.ps1`](cli/Human-Like-Typer.ps1) |
+| **2** | Right-click and select **"Run with PowerShell"** |
+| **3** | Follow the on-screen menu |
+
+#### 📚 Resources
+* [CLI Quick Start Guide](docs/cli-quick-guide.md) – Step-by-step instructions
+* No installation required – works on any Windows PC
 
 ---
 
-## 📚 Quick Start Guides
+### 🎨 GUI Edition (Standalone Application)
+**Perfect for:** Users who want a modern interface with global hotkeys.
 
-| Guide | Description |
-|:---|:---|
-| [**CLI Quick Guide**](docs/cli-quick-guide.md) | Step-by-step for PowerShell version |
-| [**GUI Quick Guide**](docs/gui-quick-guide.md) | Step-by-step for GUI executable |
+#### 📥 Get Started
+| Step | Action |
+|:---:|:---|
+| **1** | Download [`Creators Eye Human Typer.exe`](https://archive.org/download/creators-eye-human-typer/Creators%20Eye%20Human%20Typer.exe) (~60 MB) |
+| **2** | Double-click to run – **no installation needed** |
+| **3** | Paste your text and press `F5` |
 
----
-
-## ✨ Features
-
-| Feature | CLI | GUI |
-|:---|:---:|:---:|
-| Configurable typing speed (5 levels) | ✅ | ✅ |
-| Mistake simulation (6 levels) | ✅ | ✅ |
-| Preserves line breaks | ✅ | ✅ |
-| Paste from clipboard | ✅ | ✅ |
-| Import from Notepad | ✅ | ✅ |
-| Global hotkeys | ❌ | ✅ |
-| Customizable hotkeys | ✅ | ✅ |
-| Always on top | ❌ | ✅ |
-| Modern GUI | ❌ | ✅ |
+#### 📚 Resources
+* [GUI Quick Start Guide](docs/gui-quick-guide.md) – Detailed instructions
+* [Archive.org Mirror](https://archive.org/details/creators-eye-human-typer) – Project page
+* [Torrent Download](https://archive.org/download/creators-eye-human-typer/creators-eye-human-typer_archive.torrent)
 
 ---
 
-## 📁 Repository Structure
+## 👨‍💻 For Developers
 
+### Source Code Access
+| Version | Location | Technology |
+|:---|:---|:---|
+| **CLI Source** | [`cli/Human-Like-Typer.ps1`](cli/Human-Like-Typer.ps1) | PowerShell 5.1+ |
+| **GUI Source** | [`gui/src/`](gui/src/) | C# / .NET 8.0 (Windows Forms) |
+
+### 🛠️ Build the GUI Yourself
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/CreatorsEye-AutoTyper.git
+cd CreatorsEye-AutoTyper/gui/src
+
+# Restore dependencies
+dotnet restore
+
+# Build and publish as single EXE
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
+```
+*The compiled EXE will be in:* `bin/Release/net8.0-windows/win-x64/publish/`
+
+### 🔧 Modify and Extend
+* **CLI Version:** Edit the PowerShell script directly – it's just text!
+* **GUI Version:** Open `gui/src/` in Visual Studio or VS Code.
+
+### 📁 Project Structure for Developers
 ```text
 CreatorsEye-AutoTyper/
-├── README.md
-├── LICENSE
-├── .gitignore
-├── cli/
-│   ├── README.md
+├── cli/                      # PowerShell source
 │   └── Human-Like-Typer.ps1
-├── gui/
-│   ├── README.md
-│   ├── src/
-│   │   ├── Program.cs
-│   │   ├── MainForm.cs
-│   │   └── CEautoTyper.csproj
-│   └── releases/
-│       └── v1.0/
-│           └── README.md
-└── docs/
-    ├── cli-quick-guide.md
-    └── gui-quick-guide.md
+├── gui/                      # C# source
+│   └── src/
+│       ├── Program.cs        # Entry point
+│       ├── MainForm.cs       # Main logic (800+ lines)
+│       └── CEautoTyper.csproj
+├── docs/                     # Documentation
+│   ├── cli-quick-guide.md
+│   └── gui-quick-guide.md
+├── releases/                 # Pre-built releases
+│   └── v1.0/
+│       ├── README.md
+│       └── Capture.PNG
+└── README.md
 ```
 
 ---
 
-## 📝 License
+## ✨ Features at a Glance
 
-**MIT** © 2026 Creators Eye
+| Feature | CLI | GUI |
+|:---|:---:|:---:|
+| Ready to run – no setup | ✅ | ✅ |
+| 5 typing speeds | ✅ | ✅ |
+| 6 mistake levels + Random | ✅ | ✅ |
+| Line break preservation | ✅ | ✅ |
+| Clipboard import | ✅ | ✅ |
+| Notepad import | ✅ | ✅ |
+| Global hotkeys | ❌ | ✅ |
+| Customizable hotkeys | ✅ | ✅ |
+| Always on top | ❌ | ✅ |
+| Modern graphical interface | ❌ | ✅ |
+| Open source | ✅ | ✅ |
+
+---
+
+## 📝 License
+**MIT** © 2026 Creators Eye – Free for personal and commercial use.
+
+---
+
+## ⭐ Support the Project
+* ⭐ **Star** this repository
+* 📥 **Download** from Archive.org
+* 🐛 **Report issues** on GitHub
+* 💡 **Suggest features** via Issues
+
+<br>
+<p align="center">
+  <b>Built for users, crafted for developers</b><br>
+  <i>Type naturally, automatically! 🚀</i>
+</p>
