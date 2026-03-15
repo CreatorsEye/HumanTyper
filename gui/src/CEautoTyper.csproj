@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <AssemblyName>CEautoTyper</AssemblyName>
+    <Version>1.0.0</Version>
+    <Authors>Creators Eye</Authors>
+    <Description>Human-like typing automation tool - GUI version</Description>
+    <PackageProjectUrl>https://archive.org/details/creators-eye-human-typer</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yourusername/CreatorsEye-AutoTyper</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
