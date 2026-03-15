@@ -1,4 +1,4 @@
-# <img src="[https://raw.githubusercontent.com/CreatorsEye/CreatorsEye-AutoTyper/main/docs/icon.png](https://github.com/CreatorsEye)" width="32" height="32"> Creators Eye Auto Typer
+# <img src="https://avatars.githubusercontent.com/u/38386441?v=4&size=40" width="32" height="32"> Creators Eye Auto Typer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Windows](https://img.shields.io/badge/Platform-Windows%207%2B-blue)](https://github.com/yourusername/CreatorsEye-AutoTyper)
