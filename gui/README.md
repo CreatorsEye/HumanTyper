@@ -1,9 +1,9 @@
 # 🚀 Creators Eye Auto Typer v1.0 – GUI Release
 
-[![Download](https://img.shields.io/badge/Download-CEautoTyper.exe-brightgreen)](https://archive.org/download/creators-eye-human-typer/CEautoTyper.exe)
+[![Download](https://img.shields.io/badge/Download-EXE-brightgreen)](https://archive.org/download/creators-eye-human-typer/Creators%20Eye%20Human%20Typer.exe)
 [![Version](https://img.shields.io/badge/Version-1.0-blue)]()
-[![Size](https://img.shields.io/badge/Size-60%20MB-orange)]()
 [![Windows](https://img.shields.io/badge/Platform-Windows%207%2B-success)]()
+[![Archive.org](https://img.shields.io/badge/Archive.org-Project-orange)](https://archive.org/details/creators-eye-human-typer)
 
 ## 📸 Screenshot
 
