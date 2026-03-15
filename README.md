@@ -3,7 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Windows](https://img.shields.io/badge/Platform-Windows-blue)](https://github.com/yourusername/CreatorsEye-AutoTyper)
 [![CLI](https://img.shields.io/badge/CLI-PowerShell-blue)](cli/)
-[![GUI](https://img.shields.io/badge/GUI-EXE-brightgreen)](https://archive.org/download/creators-eye-human-typer/CEautoTyper.exe)
+[![GUI](https://img.shields.io/badge/GUI-EXE-brightgreen)](https://archive.org/download/creators-eye-human-typer/Creators%20Eye%20Human%20Typer.exe)
+[![Internet Archive](https://img.shields.io/badge/Archive.org-Project-orange)](https://archive.org/details/creators-eye-human-typer)
+[![Torrent](https://img.shields.io/badge/Download-Torrent-blueviolet)](https://archive.org/download/creators-eye-human-typer/creators-eye-human-typer_archive.torrent)
 
 A human-like typing automation tool that types text exactly as written – preserving line breaks, spacing, and formatting.
 
