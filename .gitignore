@@ -1,0 +1,45 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.swp
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Publish output
+publish/
+*.pdb
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Benchmark Results
+BenchmarkDotNet.Artifacts/
+
+# .NET Core project folders
+.vs/
