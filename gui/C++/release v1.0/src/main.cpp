@@ -8,8 +8,6 @@
 #include <mutex>
 #include <random>
 #include <chrono>
-#include <cstring>
-#include <cctype>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -23,24 +21,14 @@ static int mstIdx = 0;
 static int totalWords = 15;
 static char inputBuf[4096] = "This is simple auto writer tool used for good propose.\nFree to use.\nGreat to achieve your goals.";
 
-// Hardcoded Global Hotkeys (Win32 Virtual Keys)
-#ifdef _WIN32
-static int hkStart = VK_F5;
-static int hkPause = VK_F8;
-static int hkResume = VK_F9;
-static int hkStop = VK_F10;
-#else
-static int hkStart = 0, hkPause = 0, hkResume = 0, hkStop = 0;
-#endif
-
 std::atomic<bool> isTyping(false);
 std::atomic<bool> isPaused(false);
 std::atomic<bool> stopTyping(false);
-std::string engineLog = "[12:00:00] CE Auto Typer V1.0 Online\n> GUI stripped down to core functionality.\n> Sharp edges, standard OS window.\n> Hardcoded Hotkeys: F5 (Launch), F8 (Pause), F9 (Resume), F10 (Stop)\n";
+std::string engineLog = "[12:00:00] CE Auto Typer V1.0 Online\n> GUI stripped down to core functionality.\n> Sharp edges, standard OS window.\n";
 std::mutex logMutex;
 
 // ------------------------------------------------------------------
-// Helper Functions (Win32 Globals & Hooks)
+// Helper Functions
 // ------------------------------------------------------------------
 void AddLog(const std::string& msg) {
     std::lock_guard<std::mutex> lock(logMutex);
@@ -50,25 +38,10 @@ void AddLog(const std::string& msg) {
 int CountWords(const std::string& str) {
     int count = 0; bool inWord = false;
     for (char c : str) {
-        if (std::isspace(c)) inWord = false;
+        if (c == ' ' || c == '\n' || c == '\r' || c == '\t') inWord = false;
         else if (!inWord) { inWord = true; count++; }
     }
     return count;
-}
-
-bool IsKeyJustPressed(int vk) {
-#ifdef _WIN32
-    static bool keyStates[256] = { false };
-    if (vk < 0 || vk > 255) return false;
-    bool isDown = (GetAsyncKeyState(vk) & 0x8000) != 0;
-    if (isDown && !keyStates[vk]) {
-        keyStates[vk] = true;
-        return true;
-    } else if (!isDown) {
-        keyStates[vk] = false;
-    }
-#endif
-    return false;
 }
 
 void TypeChar(char c) {
@@ -168,7 +141,6 @@ void TypingWorker(int speedSetting, int mistakeSetting, std::string textToType) 
 int main() {
     if (!glfwInit()) return 1;
 
-    // Standard OS window decoration (No custom title bar resizing stuff!)
     glfwWindowHint(GLFW_DECORATED, GLFW_TRUE);
     glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
 
@@ -176,7 +148,6 @@ int main() {
     GLFWwindow* window = glfwCreateWindow(winW, winH, "CE AUTO TYPER v1.0", NULL, NULL);
     if (!window) return 1;
 
-    // Keep it TopMost for functionality
     glfwSetWindowAttrib(window, GLFW_FLOATING, GLFW_TRUE);
     glfwSetWindowSizeLimits(window, 800, 600, GLFW_DONT_CARE, GLFW_DONT_CARE);
 
@@ -190,7 +161,6 @@ int main() {
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
 
-    // Standard ImGui Dark Theme with completely sharp edges (0.0f rounding)
     ImGui::StyleColorsDark();
     ImGuiStyle& style = ImGui::GetStyle();
     style.WindowRounding = 0.0f;
@@ -206,32 +176,8 @@ int main() {
 
     static char logBufRender[4096 * 4] = "";
 
-    // ------------------------------------------------------------------
-    // Main loop
-    // ------------------------------------------------------------------
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
-
-        // --------------------------------------------------------------
-        // GLOBAL HOTKEY POLLING
-        // --------------------------------------------------------------
-        if (IsKeyJustPressed(hkStart) && !isTyping) {
-            std::string textToType(inputBuf);
-            if (!textToType.empty()) {
-                stopTyping = false; isPaused = false; isTyping = true;
-                std::thread(TypingWorker, spdIdx, mstIdx, textToType).detach();
-                AddLog("> Global Hotkey: START Triggered.");
-            }
-        }
-        if (IsKeyJustPressed(hkPause) && isTyping && !isPaused) {
-            isPaused = true; AddLog("> Global Hotkey: PAUSED Triggered.");
-        }
-        if (IsKeyJustPressed(hkResume) && isTyping && isPaused) {
-            isPaused = false; AddLog("> Global Hotkey: RESUMED Triggered.");
-        }
-        if (IsKeyJustPressed(hkStop) && isTyping) {
-            stopTyping = true; AddLog("> Global Hotkey: STOPPED Triggered.");
-        }
 
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
@@ -240,17 +186,14 @@ int main() {
         ImGui::SetNextWindowPos(ImVec2(0,0));
         ImGui::SetNextWindowSize(io.DisplaySize);
         
-        // Single main fullscreen child window mapped to the OS Window
         ImGui::Begin("MainLayout", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
 
         const char* speeds[] = { "Very Slow", "Slow", "Medium", "Fast", "Very Fast" };
         const char* mistRanges[] = { "None", "Few", "Some", "Many", "Lots", "Random" };
         
-        // Setup dynamic status string exactly as requested
         const char* currentStatus = "idle";
         if (isTyping) currentStatus = isPaused ? "pause" : "start";
 
-        // Status : (idle,start, pause) : speed (what chousen) : mistake (what chousen)
         ImGui::SetCursorPos(ImVec2(20, 15));
         ImGui::Text("Status : (%s) : speed (%s) : mistake (%s)", currentStatus, speeds[spdIdx], mistRanges[mstIdx]);
 
@@ -259,11 +202,10 @@ int main() {
             totalWords = CountWords(inputBuf);
         }
 
-        // Replaced Notepad location with Default button
         ImGui::SetCursorPos(ImVec2(20, 175));
         if (ImGui::Button("Default String", ImVec2(120, 30))) {
             std::string defStr = "This is simple auto writer tool used for good propose.\nFree to use.\nGreat to achieve your goals.";
-            strncpy(inputBuf, defStr.c_str(), sizeof(inputBuf) - 1);
+            snprintf(inputBuf, sizeof(inputBuf), "%s", defStr.c_str());
             totalWords = CountWords(defStr);
             AddLog("> Loaded default string.");
         }
@@ -306,13 +248,13 @@ int main() {
 
         {
             std::lock_guard<std::mutex> lock(logMutex);
-            strncpy(logBufRender, engineLog.c_str(), sizeof(logBufRender) - 1);
+            snprintf(logBufRender, sizeof(logBufRender), "%s", engineLog.c_str());
         }
 
         ImGui::SetCursorPos(ImVec2(20, 320));
         ImGui::InputTextMultiline("##Log", logBufRender, sizeof(logBufRender), ImVec2(760, ImGui::GetWindowHeight() - 340), ImGuiInputTextFlags_ReadOnly);
 
-        ImGui::End(); // MainLayout
+        ImGui::End();
 
         ImGui::Render();
         int dw, dh;
@@ -331,3 +273,12 @@ int main() {
     glfwTerminate();
     return 0;
 }
+
+// ------------------------------------------------------------------
+// This hides the CMD window when running the compiled .exe
+// ------------------------------------------------------------------
+#ifdef _WIN32
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
+    return main();
+}
+#endif
