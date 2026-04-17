@@ -4,6 +4,11 @@
 
 A human-like typing automation tool that evolves from simple to professional.
 
+## 🎓 A Learning Project
+
+This free version gives you **limited hints** of what we build. Our premium tools are used by teams in labs and research environments.
+
+But this? This is for **you** to learn. Start small. Grow big.
 ---
 
 ## 🎯 Choose Your Path
